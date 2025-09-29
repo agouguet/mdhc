@@ -1,8 +1,8 @@
-from ros_gym_env.policy.simple import SimplePolicy, MultiModalFeatureExtractor
-from ros_gym_env.policy.saf import SAFPolicy, SAFFeatureExtractor
-from ros_gym_env.policy.stg import STGPolicy, STGFeatureExtractor
-from ros_gym_env.policy.mdhc import MyGraphPolicyV2, MDHCFeatureExtractor
-from ros_gym_env.policy.mdhc_cross_modal import MDHCCrossModalPolicy, MDHCFeatureExtractor
+from mdhc.policy.simple import SimplePolicy, MultiModalFeatureExtractor
+from mdhc.policy.saf import SAFPolicy, SAFFeatureExtractor
+from mdhc.policy.stg import STGPolicy, STGFeatureExtractor
+from mdhc.policy.mdhc import MDHCPolicy, MDHCFeatureExtractor
+from mdhc.policy.mdhc_cross_modal import MDHCCrossModalPolicy, MDHCFeatureExtractor
 
 import torch.nn as nn
 

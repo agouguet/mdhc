@@ -20,10 +20,10 @@ class RLInferenceNode(Node):
     def __init__(self):
         super().__init__('rl_inference_node')
 
-        self.config_name = "sparse/perpendicular_traffic.yaml"
+        self.config_name = "config.yaml"
         self.config = load_ros2_package_config("mdhc", "config/" + self.config_name)
 
-        self.model_path = os.path.join(get_package_share_directory("mdhc"), "model/sparse/circle_crowd.zip")
+        self.model_path = os.path.join(get_package_share_directory("mdhc"), "model/mdhc.zip")
 
         # --- Env construction ---
         env_fns = [self.make_env(0)]

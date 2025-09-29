@@ -42,18 +42,6 @@ include_directories(include)
 
 ament_export_dependencies(rosidl_default_runtime)
 
-# install(DIRECTORY
-#   DESTINATION share/${PROJECT_NAME}/
-# )
-# install(DIRECTORY
-#   launch
-#   DESTINATION share/${PROJECT_NAME}
-# )
-# install(DIRECTORY
-#   config
-#   DESTINATION share/${PROJECT_NAME}
-# )
-
 # Install Python modules
 ament_python_install_package(${PROJECT_NAME})
 
@@ -67,9 +55,6 @@ install(DIRECTORY
 install(PROGRAMS
   scripts/rl_trainer_node.py
   scripts/rl_inference_node.py
-  scripts/cnn_data_pub.py
-  scripts/pure_pursuit.py
-  scripts/test.py
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()

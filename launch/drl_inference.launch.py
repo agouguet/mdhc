@@ -7,8 +7,8 @@ import os
 
 def generate_launch_description():
     # Paths
-    drl_vo_nav_dir = get_package_share_directory('ros_gym_env')
-    model_file_default = os.path.join(drl_vo_nav_dir, 'model', 'test')
+    mdhc_dir = get_package_share_directory('mdhc')
+    model_file_default = os.path.join(mdhc_dir, 'model', 'test')
 
     namespace = "env_0"
 
@@ -27,14 +27,6 @@ def generate_launch_description():
         ),
 
         Node(
-            package='ros_gym_env',
-            executable='cnn_data_pub.py',
-            name=f'cnn_data_pub',
-            namespace=namespace,
-            output='screen',
-        ),
-
-        Node(
             package='pkg-nav',
             executable='velocity_smoother_node.py',
             name=f'velocity_smoother',
@@ -43,7 +35,7 @@ def generate_launch_description():
         ),
 
         Node(
-            package='ros_gym_env',
+            package='mdhc',
             executable='rl_inference_node.py',
             name='rl_inference',
             namespace=namespace,

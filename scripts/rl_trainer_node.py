@@ -28,15 +28,9 @@ class RLTrainerNode(Node):
     def __init__(self):
         super().__init__('rl_trainer_node')
 
-        # self.config_name = "training_002.yaml"
-        # self.config_name = "config.yaml"
-        # self.config_name = "hbsn.yaml"
-        self.config_name = "sparse/door_passing.yaml"
-        # self.config_name = "drl-vo_training.yaml"
-
+        self.config_name = "config.yaml"
         self.config = load_ros2_package_config("mdhc", "config/"+self.config_name)
-        # model_name = "model/"
-        model_name = "model/sparse/door_passing"
+        model_name = "model/"
         self.model_path = os.path.join(get_package_share_directory("mdhc"), model_name)
         self.use_model = False
 

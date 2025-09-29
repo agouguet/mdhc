@@ -56,7 +56,6 @@ class HBSNEnv(ROSEnv):
         if use_human:
             obs_shape += self.human_obs_size
 
-        print(obs_shape)
         self.observation_space = gym.spaces.Box(low=-math.inf, high=math.inf, shape=(obs_shape,), dtype=np.float32)
 
     def generate_actions(self, robot_pos, radius=1.0, num_actions=8):
