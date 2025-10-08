@@ -86,11 +86,11 @@ class ROSEnv(gym.Env, ABC):
         # === Services ===
         self.reset_client = self.node.create_client(Reset, self.prefix + self.config.env.ros.reset_service)
         while not self.reset_client.wait_for_service(timeout_sec=1.0):
-            self.node.get_logger().fatal('Attente du service de reset...')
+            self.node.get_logger().fatal('Waiting reset service...')
         
         self.play_client = self.node.create_client(PausePlay, self.prefix + self.config.env.ros.play_service)
         while not self.play_client.wait_for_service(timeout_sec=1.0):
-            self.node.get_logger().fatal('Attente du service de play...')
+            self.node.get_logger().fatal('Waiting play service...')
 
         self.set_action_space()
         self.set_observation_space()
